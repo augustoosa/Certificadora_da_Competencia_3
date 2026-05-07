@@ -18,20 +18,18 @@ export function CreateEventModal({ isOpen, onClose }: CreateEventModalProps) {
       />
       
       {/* Conteúdo do Modal */}
-      <div className="relative bg-white w-full max-w-2xl rounded-3xl shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-200">
+      <div className="relative bg-white w-full max-w-2xl rounded-3xl shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-200 max-h-[95vh] flex flex-col">
         
-        <div className="flex items-center justify-between p-6 border-b border-gray-100 bg-gray-50/50">
+        {/* Topo do Modal (Fixo) */}
+        <div className="flex items-center justify-between p-6 border-b border-gray-100 bg-gray-50/50 flex-shrink-0">
           <h2 className="text-xl font-bold text-slate-900">Cadastrar Novo Evento</h2>
-          <button 
-            onClick={onClose}
-            className="p-2 hover:bg-gray-200 rounded-full text-gray-500 transition-colors"
-          >
+          <button onClick={onClose} className="p-2 hover:bg-gray-200 rounded-full text-gray-500">
             <X size={24} />
           </button>
         </div>
 
-        {/* Formulário */}
-        <form className="p-8 grid grid-cols-1 md:grid-cols-2 gap-5">
+        {/* Formulário (Com Scroll Interno) */}
+          <form className="p-8 grid grid-cols-1 md:grid-cols-2 gap-5 overflow-y-auto">
             <div className="md:col-span-2 flex flex-col gap-1.5">
             <label className="text-sm font-semibold text-gray-700">Título do Evento</label>
             <input type="text" placeholder="Ex: Oficina de Robótica" className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200  focus:ring-2 focus:ring-fuchsia-500 outline-none" />
@@ -88,17 +86,10 @@ export function CreateEventModal({ isOpen, onClose }: CreateEventModalProps) {
             </div>
         </form>
 
-        {/* Rodapé do Modal */}
-        <div className="flex items-center justify-end gap-3 p-6 bg-gray-50 border-t border-gray-100">
-          <button 
-            onClick={onClose}
-            className="px-6 py-2.5 text-gray-600 font-semibold hover:bg-gray-200  transition-colors"
-          >
-            Cancelar
-          </button>
-          <button type="button" className="px-6 py-2.5 bg-fuchsia-600 hover:bg-fuchsia-700 text-white font-semibold  shadow-md transition-all">
-            Confirmar
-          </button>
+        {/* Rodapé do Modal (Fixo embaixo) */}
+        <div className="flex items-center justify-end gap-3 p-6 bg-gray-50 border-t border-gray-100 flex-shrink-0">
+          <button onClick={onClose} className="px-6 py-2.5 text-gray-600 font-semibold">Cancelar</button>
+          <button type="button" className="px-6 py-2.5 bg-md-roxo text-white font-semibold rounded-xl">Confirmar</button>
         </div>
       </div>
     </div>

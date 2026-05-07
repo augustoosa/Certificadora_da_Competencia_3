@@ -1,1 +1,18 @@
 @import "tailwindcss";
+
+@theme {
+  /* A fonte oficial */
+  --font-sans: "Poppins", sans-serif;
+
+  /* Cores Primárias Oficiais do Manual (Pág 8) */
+  --color-md-rosa: #C96372;
+  --color-md-roxo: #7B3688;
+  --color-md-azul: #35418E;
+  --color-md-amarelo: #F8E12D;
+  --color-md-verde: #54963D;
+  --color-md-laranja: #CE6B00;
+
+  /* Cores de Fundo (Clareamos as oficiais para usar de fundo) */
+  --color-md-fundo-claro: #FDF8FF; /* Fundo geral do site */
+  --color-md-roxo-claro: #F3E8F5; /* Para hover e caixas de destaque */
+}

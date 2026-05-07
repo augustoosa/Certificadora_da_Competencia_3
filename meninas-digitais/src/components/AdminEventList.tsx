@@ -24,7 +24,7 @@ export function AdminEventList() {
           </div>
           <div className="flex items-center gap-2 w-full xl:w-auto justify-end border-t xl:border-t-0 pt-4 xl:pt-0">
             <button className="p-2.5 text-gray-400 hover:text-gray-700 hover:bg-gray-100  transition-colors" title="Abrir página do evento"><ExternalLink size={20}/></button>
-            <button className="p-2.5 text-gray-400 hover:text-fuchsia-600 hover:bg-fuchsia-50  transition-colors" title="Editar"><Edit2 size={20}/></button>
+            <button className="p-2.5 text-gray-400 hover:text-md-roxo hover:bg-fuchsia-50  transition-colors" title="Editar"><Edit2 size={20}/></button>
             <button className="p-2.5 text-gray-400 hover:text-red-600 hover:bg-red-50  transition-colors" title="Excluir"><Trash2 size={20}/></button>
           </div>
         </div>
@@ -46,7 +46,7 @@ export function AdminEventList() {
           </div>
           <div className="flex items-center gap-2 w-full xl:w-auto justify-end border-t xl:border-t-0 pt-4 xl:pt-0">
             <button className="p-2.5 text-gray-400 hover:text-gray-700 hover:bg-gray-100  transition-colors" title="Abrir página do evento"><ExternalLink size={20}/></button>
-            <button className="p-2.5 text-gray-400 hover:text-fuchsia-600 hover:bg-fuchsia-50  transition-colors" title="Editar"><Edit2 size={20}/></button>
+            <button className="p-2.5 text-gray-400 hover:text-md-roxo hover:bg-fuchsia-50  transition-colors" title="Editar"><Edit2 size={20}/></button>
             <button className="p-2.5 text-gray-400 hover:text-red-600 hover:bg-red-50  transition-colors" title="Excluir"><Trash2 size={20}/></button>
           </div>
         </div>

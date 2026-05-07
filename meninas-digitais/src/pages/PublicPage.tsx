@@ -4,14 +4,16 @@ import { Sparkles } from 'lucide-react';
 
 export function PublicPage() {
   return (
-    <div className="min-h-screen bg-[#FDF4FF]">
+    <div className="min-h-screen bg-md-fundo">
       
       <Header />
 
+      {/* Adicionamos um padding (p-10) para o conteúdo não grudar nas bordas da tela */}
       <div className="p-10">
-        <div className="max-w-5xl mx-auto flex flex-col items-center">
+        {/* Usamos APENAS UMA div de limitação de largura (1400px) */}
+        <div className="max-w-[1400px] mx-auto flex flex-col items-center w-full">
           
-          <div className="flex items-center gap-2 bg-fuchsia-100 text-fuchsia-700 px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
+          <div className="flex items-center gap-2 bg-md-rosa/10 text-md-rosa px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
             <Sparkles size={16} />
             <span>Meninas no Lab</span>
           </div>
@@ -24,8 +26,9 @@ export function PublicPage() {
             Descubra oficinas, minicursos e rodas de conversa que vão transformar sua relação com a tecnologia
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full">
             
+            {/* --- Seus EventCards entram aqui --- */}
             {/* --- Evento 1 --- */}
             <EventCard 
               type="Minicurso"
@@ -53,6 +56,54 @@ export function PublicPage() {
             />
 
             {/* --- Evento 3 (Teste da Logo Padrão e Link do Forms) --- */}
+            <EventCard 
+              type="Roda de Conversa"
+              title="Mulheres na Tecnologia"
+              description="Venha bater um papo inspirador sobre os desafios e oportunidades para mulheres no mercado de TI."
+              date="25 de maio de 2026"
+              time="16:00"
+              duration="2 horas"
+              location="Auditório Principal - UTFPR"
+              vacancies={50}
+              formsUrl="https://forms.google.com" 
+              // Repare que NÃO colocamos a imageUrl aqui. O React vai usar a logo automaticamente!
+            />
+            <EventCard 
+              type="Roda de Conversa"
+              title="Mulheres na Tecnologia"
+              description="Venha bater um papo inspirador sobre os desafios e oportunidades para mulheres no mercado de TI."
+              date="25 de maio de 2026"
+              time="16:00"
+              duration="2 horas"
+              location="Auditório Principal - UTFPR"
+              vacancies={50}
+              formsUrl="https://forms.google.com" 
+              // Repare que NÃO colocamos a imageUrl aqui. O React vai usar a logo automaticamente!
+            />
+            <EventCard 
+              type="Roda de Conversa"
+              title="Mulheres na Tecnologia"
+              description="Venha bater um papo inspirador sobre os desafios e oportunidades para mulheres no mercado de TI."
+              date="25 de maio de 2026"
+              time="16:00"
+              duration="2 horas"
+              location="Auditório Principal - UTFPR"
+              vacancies={50}
+              formsUrl="https://forms.google.com" 
+              // Repare que NÃO colocamos a imageUrl aqui. O React vai usar a logo automaticamente!
+            />
+            <EventCard 
+              type="Roda de Conversa"
+              title="Mulheres na Tecnologia"
+              description="Venha bater um papo inspirador sobre os desafios e oportunidades para mulheres no mercado de TI."
+              date="25 de maio de 2026"
+              time="16:00"
+              duration="2 horas"
+              location="Auditório Principal - UTFPR"
+              vacancies={50}
+              formsUrl="https://forms.google.com" 
+              // Repare que NÃO colocamos a imageUrl aqui. O React vai usar a logo automaticamente!
+            />
             <EventCard 
               type="Roda de Conversa"
               title="Mulheres na Tecnologia"
