@@ -89,7 +89,7 @@ export function CreateEventModal({ isOpen, onClose }: CreateEventModalProps) {
         {/* Rodapé do Modal (Fixo embaixo) */}
         <div className="flex items-center justify-end gap-3 p-6 bg-gray-50 border-t border-gray-100 flex-shrink-0">
           <button onClick={onClose} className="px-6 py-2.5 text-gray-600 font-semibold">Cancelar</button>
-          <button type="button" className="px-6 py-2.5 bg-md-roxo text-white font-semibold rounded-xl">Confirmar</button>
+          <button type="button" className="px-6 py-2.5 bg-md-roxo text-white font-semibold ">Confirmar</button>
         </div>
       </div>
     </div>

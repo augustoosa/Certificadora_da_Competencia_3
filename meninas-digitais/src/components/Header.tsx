@@ -7,7 +7,7 @@ export function Header() {
       
       <div className="flex items-center gap-3">
         {/* Usando o Roxo Oficial */}
-        <div className="bg-md-roxo p-2 rounded-xl text-white">
+        <div className="bg-md-roxo p-2  text-white">
           <Calendar size={28} strokeWidth={2.5} />
         </div>
         

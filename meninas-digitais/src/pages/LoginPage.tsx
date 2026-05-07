@@ -48,7 +48,7 @@ export function LoginPage() {
                 <input 
                   type="email" 
                   placeholder="admin@meninasdigitais.edu.br" 
-                  className="w-full pl-11 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-md-roxo focus:border-transparent transition-all"
+                  className="w-full pl-11 pr-4 py-3 bg-gray-50 border border-gray-200  focus:outline-none focus:ring-2 focus:ring-md-roxo focus:border-transparent transition-all"
                 />
               </div>
             </div>
@@ -64,7 +64,7 @@ export function LoginPage() {
                 <input 
                   type="password" 
                   placeholder="••••••••" 
-                  className="w-full pl-11 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-md-roxo focus:border-transparent transition-all"
+                  className="w-full pl-11 pr-4 py-3 bg-gray-50 border border-gray-200  focus:outline-none focus:ring-2 focus:ring-md-roxo focus:border-transparent transition-all"
                 />
               </div>
             </div>
@@ -72,7 +72,7 @@ export function LoginPage() {
             {/* Botão de Entrar com as cores da marca */}
             <Link 
               to="/admin"
-              className="mt-2 w-full bg-md-roxo hover:bg-md-azul text-white font-bold py-3.5 rounded-xl flex items-center justify-center gap-2 transition-all shadow-md hover:shadow-lg"
+              className="mt-2 w-full bg-md-roxo hover:bg-md-azul text-white font-bold py-3.5  flex items-center justify-center gap-2 transition-all shadow-md hover:shadow-lg"
             >
               <LogIn size={20} />
               <span>Entrar</span>
@@ -80,7 +80,7 @@ export function LoginPage() {
           </form>
 
           {/* Credenciais de Demo */}
-          <div className="mt-8 bg-md-fundo/50 rounded-xl p-5 border border-md-roxo/10">
+          <div className="mt-8 bg-md-fundo/50  p-5 border border-md-roxo/10">
             <h3 className="text-sm font-bold text-md-roxo mb-2">Acesso Rápido:</h3>
             <p className="text-sm text-slate-600 flex flex-col gap-1">
               <span>Email: <span className="font-bold select-all text-md-roxo">admin@meninasdigitais.edu.br</span></span>

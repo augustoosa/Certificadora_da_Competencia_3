@@ -25,7 +25,7 @@ export function EventCard({ type, title, description, date, time, duration, loca
   const imageToShow = imageUrl || defaultLogo;
 
   return (
-    <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col hover:shadow-md transition-shadow h-full">
+    <div className="bg-white  shadow-sm border border-gray-100 overflow-hidden flex flex-col hover:shadow-md transition-shadow h-full">
       
       <div className="relative h-48 w-full bg-md-fundo-claro flex-shrink-0 border-b border-gray-50">
         <img 
@@ -56,7 +56,7 @@ export function EventCard({ type, title, description, date, time, duration, loca
             target="_blank" 
             rel="noopener noreferrer"
             // Botão com o Rosa oficial
-            className="mt-auto w-full bg-md-rosa hover:bg-opacity-90 text-white font-semibold py-2.5 rounded-xl flex items-center justify-center gap-2 transition-all shadow-sm"
+            className="mt-auto w-full bg-md-rosa hover:bg-opacity-90 text-white font-semibold py-2.5  flex items-center justify-center gap-2 transition-all shadow-sm"
           >
             <ExternalLink size={18} />
             <span>Inscreva-se</span>
