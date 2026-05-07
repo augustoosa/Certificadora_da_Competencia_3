@@ -26,7 +26,7 @@ export function EventCard({ type, title, description, date, time, duration, loca
   const imageToShow = imageUrl || defaultLogo;
 
   return (
-    <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col hover:shadow-md transition-shadow h-full">
+    <div className="bg-white  shadow-sm border border-gray-100 overflow-hidden flex flex-col hover:shadow-md transition-shadow h-full">
       
       <div className="relative h-48 w-full bg-fuchsia-50 flex-shrink-0">
         {/* 3. Ajuste fino: Se for a foto do evento, preenche a tela. Se for a logo, centraliza e não corta */}
@@ -68,7 +68,7 @@ export function EventCard({ type, title, description, date, time, duration, loca
             href={formsUrl}
             target="_blank" 
             rel="noopener noreferrer"
-            className="mt-auto w-full bg-fuchsia-50 hover:bg-fuchsia-100 text-fuchsia-700 font-semibold py-2.5 rounded-xl flex items-center justify-center gap-2 transition-colors border border-fuchsia-200"
+            className="mt-auto w-full bg-fuchsia-50 hover:bg-fuchsia-100 text-fuchsia-700 font-semibold py-2.5  flex items-center justify-center gap-2 transition-colors border border-fuchsia-200"
           >
             <ExternalLink size={18} />
             <span>Inscreva-se</span>

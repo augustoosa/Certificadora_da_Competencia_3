@@ -12,7 +12,7 @@ export function Sidebar({ onOpenModal }: SidebarProps) {
       
       {/* Logo */}
       <div className="h-20 flex items-center px-6 border-b border-gray-100">
-        <div className="bg-fuchsia-600 p-2 rounded-xl text-white mr-3 shadow-sm">
+        <div className="bg-fuchsia-600 p-2  text-white mr-3 shadow-sm">
           <Calendar size={20} strokeWidth={2.5} />
         </div>
         <div>
@@ -23,7 +23,7 @@ export function Sidebar({ onOpenModal }: SidebarProps) {
 
       {/* Menu de Navegação */}
       <nav className="flex-1 px-4 py-6 space-y-2">
-        <button className="w-full flex items-center gap-3 px-4 py-3 bg-fuchsia-50 text-fuchsia-700 rounded-xl font-semibold transition-colors">
+        <button className="w-full flex items-center gap-3 px-4 py-3 bg-fuchsia-50 text-fuchsia-700  font-semibold transition-colors">
           <LayoutDashboard size={20} />
           <span>Dashboard</span>
         </button>
@@ -31,7 +31,7 @@ export function Sidebar({ onOpenModal }: SidebarProps) {
         {/* Aqui chamamos a função que veio do Dashboard para abrir o modal */}
         <button 
           onClick={onOpenModal}
-          className="w-full flex items-center gap-3 px-4 py-3 text-gray-500 hover:bg-gray-50 hover:text-gray-900 rounded-xl font-medium transition-colors text-left"
+          className="w-full flex items-center gap-3 px-4 py-3 text-gray-500 hover:bg-gray-50 hover:text-gray-900  font-medium transition-colors text-left"
         >
           <Plus size={20} />
           <span>Novo Evento</span>

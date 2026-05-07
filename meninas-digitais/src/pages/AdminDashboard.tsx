@@ -27,7 +27,7 @@ export function AdminDashboard() {
           
           <button 
             onClick={() => setIsModalOpen(true)}
-            className="bg-gradient-to-r from-fuchsia-600 to-pink-500 hover:from-fuchsia-700 hover:to-pink-600 text-white px-5 py-2.5 rounded-xl font-semibold flex items-center gap-2 transition-all shadow-sm hover:shadow-md"
+            className="bg-gradient-to-r from-fuchsia-600 to-pink-500 hover:from-fuchsia-700 hover:to-pink-600 text-white px-5 py-2.5  font-semibold flex items-center gap-2 transition-all shadow-sm hover:shadow-md"
           >
             <Plus size={20} />
             Novo Evento
@@ -36,8 +36,8 @@ export function AdminDashboard() {
 
         {/* Cards de Resumo */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-          <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex items-center gap-4">
-            <div className="bg-fuchsia-100 p-4 rounded-xl text-fuchsia-600">
+          <div className="bg-white p-6  border border-gray-100 shadow-sm flex items-center gap-4">
+            <div className="bg-fuchsia-100 p-4  text-fuchsia-600">
               <CalendarIcon size={24} />
             </div>
             <div>
@@ -46,8 +46,8 @@ export function AdminDashboard() {
             </div>
           </div>
 
-          <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex items-center gap-4">
-            <div className="bg-green-100 p-4 rounded-xl text-green-600">
+          <div className="bg-white p-6  border border-gray-100 shadow-sm flex items-center gap-4">
+            <div className="bg-green-100 p-4  text-green-600">
               <Clock size={24} />
             </div>
             <div>
@@ -56,8 +56,8 @@ export function AdminDashboard() {
             </div>
           </div>
 
-          <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex items-center gap-4">
-            <div className="bg-blue-100 p-4 rounded-xl text-blue-600">
+          <div className="bg-white p-6  border border-gray-100 shadow-sm flex items-center gap-4">
+            <div className="bg-blue-100 p-4  text-blue-600">
               <Users size={24} />
             </div>
             <div>

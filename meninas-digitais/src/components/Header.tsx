@@ -8,7 +8,7 @@ export function Header() {
       {/* Lado Esquerdo: Logo e Títulos */}
       <div className="flex items-center gap-3">
         {/* Ícone com fundo roxo/rosa */}
-        <div className="bg-fuchsia-600 p-2 rounded-xl text-white">
+        <div className="bg-fuchsia-600 p-2  text-white">
           <Calendar size={28} strokeWidth={2.5} />
         </div>
         

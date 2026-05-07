@@ -36,7 +36,7 @@ export function PublicPage() {
               duration="4 horas"
               location="Laboratório de Informática - UTFPR"
               vacancies={25}
-              imageUrl="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=600&auto=format&fit=crop"
+              formsUrl="https://forms.google.com" 
             />
 
             {/* --- Evento 2 --- */}
@@ -49,7 +49,7 @@ export function PublicPage() {
               duration="3 horas"
               location="Laboratório de Informática - UTFPR"
               vacancies={25}
-              imageUrl="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=600&auto=format&fit=crop"
+              formsUrl="https://forms.google.com" 
             />
 
             {/* --- Evento 3 (Teste da Logo Padrão e Link do Forms) --- */}
