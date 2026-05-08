@@ -102,31 +102,3 @@ OBS: O projeto ainda está em desenvolvimento, a grande maioria dos botoes ainda
    * No Dashboard, observe as métricas e a listagem de eventos.
    * Clique no botão **"Novo Evento"**.
    * O modal de cadastro deve abrir na tela, com os campos obrigatórios (Título, Tipo, Data, Local).
-
-
-## 📂 Estrutura de Pastas Padrão
-
-Para mantermos a organização do projeto, sempre crie seus arquivos nos locais corretos dentro da pasta `src/`:
-
-- `components/`: Componentes reutilizáveis (botões, cards, modais genéricos).
-- `pages/`: As páginas completas (Home, Calendário, Painel Admin).
-- `services/`: Comunicação com APIs externas e com o banco Supabase.
-- `types/`: Tipagens do TypeScript (como as interfaces das tabelas).
-- `utils/`: Funções auxiliares puras (ex: formatador de data, validador de formulário).
-
----
-
-## 🔀 Fluxo de Trabalho (Git Flow)
-
-**⚠️ NUNCA trabalhe direto na branch `main`.** A branch `main` é sagrada e apenas para código 100% pronto e revisado.
-
-1. Todo o nosso desenvolvimento se une na branch **`develop`**.
-2. Quando for assumir uma nova tarefa (ex: criar a listagem de eventos), crie uma branch a partir da `develop`:
-
-```bash
-git checkout develop
-git pull origin develop
-git checkout -b feat/nome-da-sua-tarefa
-```
-
-3. Ao finalizar, faça o push da sua branch e abra um **Pull Request (PR)** no GitHub apontando para a branch `develop`. Peça para pelo menos um colega revisar antes de aprovar.
