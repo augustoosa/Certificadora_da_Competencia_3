@@ -1,27 +1,29 @@
-# 💜 Sistema de Divulgação e Calendário de Eventos - Meninas Digitais (UTFPR-CP)
+# Sistema de Divulgação e Calendário de Eventos - Meninas Digitais (UTFPR-CP)
 
-## 👥 1. Nome da Equipe
+![Logo Meninas Digitais](meninas-digitais/src/assets/logo_meninas_digitais.png)
+
+## 1. Membros da Equipe
 * **Augusto:** Front-end (React, Tailwind CSS, UI/UX)
 * **Matheus:** Front-end e Integração
 * **Ricardo:** Back-end 
-* ***José Renato:** Banco de Dados
+* **José Renato:** Banco de Dados e Autenticação
 
-## 🎯 2. Objetivo do Sistema
+## 2. Objetivo do Sistema
 A plataforma web será um **Sistema de Controle e Gestao de Eventos**, desenvolvido para centralizar e otimizar a divulgação do cronograma de atividades (como oficinas, minicursos e rodas de conversa) do projeto de extensão Meninas Digitais. O sistema atuará como um catálogo digital interativo para o público geral e possui um painel administrativo para a gestão desses eventos.
 
-## ✨ 3. Breve Apresentação das Funcionalidades Desenvolvidas
+## 3. Breve Apresentação das Funcionalidades Desenvolvidas
 * **Vitrine Pública:** Visualização de todos os eventos disponíveis em formato de cards interativos.
 * **Autenticação:** Acesso à área administrativa por meio de uma página de login (a autenticacao sera desenvolvida nas proximas semanas).
 * **Dashboard Administrativo:** Painel de controle (total de eventos, próximos eventos, total de vagas).
-* **IMPORTANTE: TODOS os dados atuais(informacoes dos cards e do dashboard) vistos nas páginas foram inventados e só existem dentro do código do front-end, visto que ainda nao foi feita a conexao com o back-end. Os cards da página pública e os números do dashboard foram criados apenas para testar a estética das páginas.**
+* **IMPORTANTE: TODOS os dados atuais (informacoes dos cards e do dashboard) vistos nas páginas foram inventados e só existem dentro do código do front-end, visto que ainda nao foi feita a conexao com o back-end. Os cards da página pública e os números do dashboard foram criados apenas para testar a estética das páginas. [08/05/2026]**
 
-## 🎥 4. Vídeo de Demonstração
+## 4. Vídeo de Demonstração
 > [COLOQUE O LINK DO VÍDEO DO YOUTUBE AQUI]
 *(Vídeo demonstrando a instalação das ferramentas e a execução do sistema em ambiente local).*
 
 ---
 
-## 🛠️ 5. Ferramentas, Tecnologias e Bibliotecas
+## 5. Ferramentas, Tecnologias e Bibliotecas
 
 Para garantir a transparência e reprodutibilidade do projeto, listamos abaixo todas as ferramentas utilizadas:
 
@@ -52,7 +54,7 @@ Para garantir a transparência e reprodutibilidade do projeto, listamos abaixo t
 - Vite
 ---
 
-## 🗄️ 6. Roteiro para Criar e Executar a Base de Dados
+## 6. Roteiro para Criar e Executar a Base de Dados
 
 Como o projeto utiliza o Supabase como serviço gerenciado, a base de dados fica na nuvem. Siga os passos para replicar o banco:
 
@@ -62,11 +64,12 @@ Como o projeto utiliza o Supabase como serviço gerenciado, a base de dados fica
 4. No menu lateral esquerdo, vá em **"SQL Editor"** e clique em **"New Query"**.
 5. Inserir o script SQL de criação das tabela.
 6. Clique em **"Run"** para criar a estrutura do banco de dados.
-7. No menu lateral, vá em **"Project Settings" -> "API"**, la voce encontrará sua `Project URL` e a sua `anon public key`.
+7. Criado o schema base do SQL partiremos para a conexão da API nas próximas etapas. Para isso utilizaremos o menu **Integrations** e a **Data API** gerada com base no schema.
+8. EM BREVE...
 
 ---
 
-## 💻 7. Roteiro para Salvar o Código, Compilar e Executar a Aplicação
+## 7. Roteiro para Salvar o Código, Compilar e Executar a Aplicação
 
 Com as ferramentas pré-requisitos (Node.js e Git) instaladas na máquina, siga o passo a passo em seu terminal:
 
@@ -87,7 +90,7 @@ Com as ferramentas pré-requisitos (Node.js e Git) instaladas na máquina, siga 
 
 ---
 
-## 🧪 8. Roteiro a ser seguido para Testar o Sistema
+## 8. Roteiro a ser seguido para Testar o Sistema
 
 OBS: O projeto ainda está em desenvolvimento, a grande maioria dos botoes ainda nao apresentam funcionalidade, visto que elas serao implementadas futuramente até a Entrega final.
 
@@ -110,7 +113,7 @@ OBS: O projeto ainda está em desenvolvimento, a grande maioria dos botoes ainda
    * Clique no botão **"Novo Evento"**.
    * O modal de cadastro deve abrir na tela, com os campos obrigatórios (Título, Tipo, Data, Local).
 
-## 📂 Estrutura de Pastas Padrão
+## Estrutura de Pastas Padrão
 
 Para mantermos a organização do projeto, sempre crie seus arquivos nos locais corretos dentro da pasta `src/`:
 
@@ -122,7 +125,7 @@ Para mantermos a organização do projeto, sempre crie seus arquivos nos locais 
 
 ---
 
-## 🔀 Fluxo de Trabalho (Git Flow)
+## Fluxo de Trabalho (Git Flow)
 
 **⚠️ NUNCA trabalhe direto na branch `main`.** A branch `main` é sagrada e apenas para código 100% pronto e revisado.
 
