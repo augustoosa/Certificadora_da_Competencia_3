@@ -43,7 +43,13 @@ Para garantir a transparência e reprodutibilidade do projeto, listamos abaixo t
 * **Supabase JS Client** (v2.x) - Biblioteca para conectar a aplicação ao banco de dados. [Link oficial](https://supabase.com/docs/reference/javascript/installing)
 
 #### Observação Importante:
-* Os seguintes itens já serao(e devem ser) automaticamente baixados pelo comando *npm install* após a clonagem do repositório(confira no tópico 7)
+* Os seguintes itens já serao(e devem ser) automaticamente baixados pelo comando *npm install* após a clonagem do repositório(confira no tópico 7):
+- React
+- Tailwind CSS
+- React Router DOM
+- Lucide React
+- Supabase JS Client
+- Vite
 ---
 
 ## 🗄️ 6. Roteiro para Criar e Executar a Base de Dados
