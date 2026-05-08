@@ -54,7 +54,7 @@ Como o projeto utiliza o Supabase como serviço gerenciado, a base de dados fica
 2. Clique em **"New Project"**, defina um nome, uma senha segura para o banco e selecione a região mais próxima (ex: São Paulo).
 3. Aguarde o projeto ser provisionado (pode levar alguns minutos).
 4. No menu lateral esquerdo, vá em **"SQL Editor"** e clique em **"New Query"**.
-5. *(Inserir aqui futuramente o script SQL de criação da tabela 'events').*
+5. Inserir o script SQL de criação das tabela.
 6. Clique em **"Run"** para criar a estrutura do banco de dados.
 7. No menu lateral, vá em **"Project Settings" -> "API"**, la voce encontrará sua `Project URL` e a sua `anon public key`.
 
