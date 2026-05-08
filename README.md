@@ -3,7 +3,8 @@
 ## 👥 1. Nome da Equipe
 * **Augusto:** Front-end (React, Tailwind CSS, UI/UX)
 * **Matheus:** Front-end e Integração
-* **Rick:** Back-end e Banco de Dados
+* **Ricardo:** Back-end 
+* ***José Renato:** Banco de Dados
 
 ## 🎯 2. Objetivo do Sistema
 A plataforma web será um **Sistema de Controle e Gestao de Eventos**, desenvolvido para centralizar e otimizar a divulgação do cronograma de atividades (como oficinas, minicursos e rodas de conversa) do projeto de extensão Meninas Digitais. O sistema atuará como um catálogo digital interativo para o público geral e possui um painel administrativo para a gestão desses eventos.
