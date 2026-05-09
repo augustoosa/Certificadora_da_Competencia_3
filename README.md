@@ -15,8 +15,8 @@ A plataforma web será um **Sistema de Controle e Gestao de Eventos**, desenvolv
 * **Dashboard Administrativo:** Painel de controle (total de eventos, próximos eventos, total de vagas).
 * **IMPORTANTE: TODOS os dados atuais(informacoes dos cards e do dashboard) vistos nas páginas foram inventados e só existem dentro do código do front-end, visto que ainda nao foi feita a conexao com o back-end. Os cards da página pública e os números do dashboard foram criados apenas para testar a estética das páginas.**
 
-## 🎥 4. Vídeo de Demonstração
-> [COLOQUE O LINK DO VÍDEO DO YOUTUBE AQUI]
+## 🎥 4. Vídeo de Demonstração de instalação e execução
+> [Link para o vídeo no youtube](https://youtu.be/Bc7tqgLEwhc)
 *(Vídeo demonstrando a instalação das ferramentas e a execução do sistema em ambiente local).*
 
 ---
@@ -72,7 +72,7 @@ Com as ferramentas pré-requisitos (Node.js e Git) instaladas na máquina, siga 
 
 1. **Clonar o código-fonte:**
    ```bash
-   git clone [https://github.com/augustoosa/Certificadora_da_Competencia_3](https://github.com/augustoosa/Certificadora_da_Competencia_3)
+   git clone https://github.com/augustoosa/Certificadora_da_Competencia_3
    cd meninas-digitais
    ```
 2. **Compilar/Instalar as dependências do projeto:**
