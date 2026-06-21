@@ -16,3 +16,16 @@
   --color-md-fundo-claro: #FDF8FF; /* Fundo geral do site */
   --color-md-roxo-claro: #F3E8F5; /* Para hover e caixas de destaque */
 }
+
+@utility input {
+  width: 100%;
+  padding: 0.625rem 1rem;
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  outline: none;
+}
+
+.input:focus {
+  border-color: var(--color-md-roxo);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-md-roxo) 25%, transparent);
+}
