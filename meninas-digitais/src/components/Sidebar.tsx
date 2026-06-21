@@ -1,5 +1,6 @@
 import { Calendar, LayoutDashboard, Plus, LogOut } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../contexts/AuthContext';
 
 // Definimos que a Sidebar precisa receber uma função para abrir o modal
 interface SidebarProps {
@@ -7,6 +8,13 @@ interface SidebarProps {
 }
 
 export function Sidebar({ onOpenModal }: SidebarProps) {
+  const { administrador, signOut } = useAuth();
+  const navigate = useNavigate();
+
+  const handleSignOut = async () => {
+    await signOut();
+    navigate('/login', { replace: true });
+  };
   return (
     <aside className="w-64 bg-white border-r border-gray-200 flex flex-col hidden md:flex">
       
@@ -45,18 +53,18 @@ export function Sidebar({ onOpenModal }: SidebarProps) {
             A
           </div>
           <div className="overflow-hidden">
-            <p className="text-sm font-bold text-gray-900 truncate">Administradora</p>
-            <p className="text-xs text-gray-500 truncate">admin@meninasdigitais.edu.br</p>
+            <p className="text-sm font-bold text-gray-900 truncate">{administrador?.nome ?? 'Administradora'}</p>
+            <p className="text-xs text-gray-500 truncate">{administrador?.email}</p>
           </div>
         </div>
         
-        <Link 
-          to="/" 
+        <button
+          onClick={handleSignOut}
           className="flex items-center gap-2 px-4 py-2 text-red-600 hover:bg-red-50 rounded-lg font-medium transition-colors w-full"
         >
           <LogOut size={18} />
           <span>Sair</span>
-        </Link>
+        </button>
       </div>
     </aside>
   );
