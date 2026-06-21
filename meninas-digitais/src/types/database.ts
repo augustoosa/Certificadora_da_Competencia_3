@@ -36,10 +36,10 @@ export type Evento = {
   tipo_evento: EventoTipo
   vagas: number | null
   data_evento: string
-  horario_inicio: string
+  horario_inicio: string | null
   horario_termino: string | null
-  local: string
-  descricao: string
+  local: string | null
+  descricao: string | null
   status: EventoStatus
   link_inscricao: string | null
   imagem_capa_url: string | null

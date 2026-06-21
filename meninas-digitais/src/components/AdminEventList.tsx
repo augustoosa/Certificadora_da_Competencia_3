@@ -1,6 +1,7 @@
 import { Clock, Users, ExternalLink, Edit2, Trash2, MapPin } from 'lucide-react'
 import type { Evento } from '../types/database'
 import { formatDate, formatTime, isPastEvent } from '../utils/events'
+import defaultLogo from '../assets/logo_meninas_digitais.png'
 
 interface AdminEventCardProps {
   event: Evento
@@ -13,6 +14,13 @@ interface AdminEventCardProps {
 function AdminEventCard({ event, previous = false, deleting, onEdit, onDelete }: AdminEventCardProps) {
   return (
     <article className={`bg-white border border-gray-100 p-6 shadow-sm flex flex-col xl:flex-row gap-6 justify-between items-start xl:items-center ${previous ? 'opacity-65' : ''}`}>
+      <div className="w-full xl:w-36 h-40 xl:h-28 bg-md-fundo-claro border border-gray-100 flex-shrink-0 overflow-hidden">
+        <img
+          src={event.imagem_capa_url || defaultLogo}
+          alt={`Capa de ${event.titulo}`}
+          className={`w-full h-full ${event.imagem_capa_url ? 'object-cover' : 'object-contain p-4 opacity-80'}`}
+        />
+      </div>
       <div className="space-y-3 flex-1 min-w-0">
         <div className="flex flex-wrap items-center gap-3">
           <span className="bg-fuchsia-100 text-md-roxo text-xs font-bold px-3 py-1 rounded-full">{event.tipo_evento}</span>
@@ -20,10 +28,10 @@ function AdminEventCard({ event, previous = false, deleting, onEdit, onDelete }:
           <span className="bg-gray-100 text-gray-600 text-xs font-semibold px-3 py-1 rounded-full">{event.status}</span>
         </div>
         <h3 className="font-bold text-lg text-slate-900">{event.titulo}</h3>
-        <p className="text-sm text-gray-600 line-clamp-2 max-w-4xl">{event.descricao}</p>
+        {event.descricao && <p className="text-sm text-gray-600 line-clamp-2 max-w-4xl">{event.descricao}</p>}
         <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500 pt-1">
-          <div className="flex items-center gap-1.5"><Clock size={16} /> {formatTime(event.horario_inicio)}</div>
-          <div className="flex items-center gap-1.5"><MapPin size={16} /> {event.local}</div>
+          <div className="flex items-center gap-1.5"><Clock size={16} /> {formatTime(event.horario_inicio) || 'Horário a definir'}</div>
+          <div className="flex items-center gap-1.5"><MapPin size={16} /> {event.local || 'Local a definir'}</div>
           <div className="flex items-center gap-1.5"><Users size={16} /> {event.vagas === null ? 'Sem limite' : `${event.vagas} vagas`}</div>
         </div>
       </div>

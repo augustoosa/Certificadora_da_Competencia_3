@@ -1,5 +1,5 @@
-import { useState, type FormEvent } from 'react'
-import { LoaderCircle, X } from 'lucide-react'
+import { useRef, useState, type FormEvent } from 'react'
+import { ImageOff, LoaderCircle, RotateCcw, X } from 'lucide-react'
 import type { Evento, EventoInsert, EventoStatus, EventoTipo } from '../types/database'
 import { EVENTO_STATUS, EVENTO_TIPOS } from '../utils/events'
 import { removeCover, saveEvent, uploadCover } from '../services/events'
@@ -23,10 +23,10 @@ function formFromEvent(event: Evento | null) {
     tipo_evento: event.tipo_evento,
     vagas: event.vagas?.toString() ?? '',
     data_evento: event.data_evento,
-    horario_inicio: event.horario_inicio.slice(0, 5),
+    horario_inicio: event.horario_inicio?.slice(0, 5) ?? '',
     horario_termino: event.horario_termino?.slice(0, 5) ?? '',
-    local: event.local,
-    descricao: event.descricao,
+    local: event.local ?? '',
+    descricao: event.descricao ?? '',
     status: event.status,
     link_inscricao: event.link_inscricao ?? '',
   } : emptyForm
@@ -35,8 +35,10 @@ function formFromEvent(event: Evento | null) {
 export function CreateEventModal({ isOpen, event, onClose, onSaved }: EventModalProps) {
   const [form, setForm] = useState(() => formFromEvent(event))
   const [file, setFile] = useState<File | null>(null)
+  const [removeCurrentImage, setRemoveCurrentImage] = useState(false)
   const [error, setError] = useState('')
   const [saving, setSaving] = useState(false)
+  const fileInputRef = useRef<HTMLInputElement>(null)
 
   if (!isOpen) return null
 
@@ -50,6 +52,13 @@ export function CreateEventModal({ isOpen, event, onClose, onSaved }: EventModal
     if (!selected.type.startsWith('image/')) return setError('Selecione um arquivo de imagem.')
     if (selected.size > 5 * 1024 * 1024) return setError('A imagem deve ter no máximo 5 MB.')
     setFile(selected)
+    setRemoveCurrentImage(false)
+  }
+
+  const handleRemoveImage = () => {
+    setFile(null)
+    setRemoveCurrentImage(true)
+    if (fileInputRef.current) fileInputRef.current.value = ''
   }
 
   const handleSubmit = async (submitEvent: FormEvent) => {
@@ -71,17 +80,17 @@ export function CreateEventModal({ isOpen, event, onClose, onSaved }: EventModal
         tipo_evento: form.tipo_evento,
         vagas: form.vagas === '' ? null : Number(form.vagas),
         data_evento: form.data_evento,
-        horario_inicio: form.horario_inicio,
+        horario_inicio: form.horario_inicio || null,
         horario_termino: form.horario_termino || null,
-        local: form.local.trim(),
-        descricao: form.descricao.trim(),
+        local: form.local.trim() || null,
+        descricao: form.descricao.trim() || null,
         status: form.status,
         link_inscricao: form.link_inscricao.trim() || null,
-        imagem_capa_url: uploadedUrl ?? event?.imagem_capa_url ?? null,
+        imagem_capa_url: uploadedUrl ?? (removeCurrentImage ? null : event?.imagem_capa_url ?? null),
       }
 
       await saveEvent(values, event?.id)
-      if (uploadedUrl && event?.imagem_capa_url) await removeCover(event.imagem_capa_url)
+      if ((uploadedUrl || removeCurrentImage) && event?.imagem_capa_url) await removeCover(event.imagem_capa_url)
       onSaved(event ? 'Evento atualizado com sucesso.' : 'Evento cadastrado com sucesso.')
     } catch (saveError) {
       if (uploadedUrl) await removeCover(uploadedUrl)
@@ -101,23 +110,41 @@ export function CreateEventModal({ isOpen, event, onClose, onSaved }: EventModal
         </div>
 
         <div className="p-8 grid grid-cols-1 md:grid-cols-2 gap-5 overflow-y-auto">
-          {error && <div role="alert" className="md:col-span-2 bg-red-50 border border-red-200 text-red-700 px-4 py-3 text-sm">{error}</div>}
           <Field label="Título do Evento" wide><input required value={form.titulo} onChange={(e) => setField('titulo', e.target.value)} type="text" maxLength={150} className="input" /></Field>
           <Field label="Tipo"><select value={form.tipo_evento} onChange={(e) => setField('tipo_evento', e.target.value as EventoTipo)} className="input">{EVENTO_TIPOS.map((type) => <option key={type}>{type}</option>)}</select></Field>
           <Field label="Status"><select value={form.status} onChange={(e) => setField('status', e.target.value as EventoStatus)} className="input">{EVENTO_STATUS.map((status) => <option key={status}>{status}</option>)}</select></Field>
           <Field label="Vagas (vazio = sem limite)"><input value={form.vagas} onChange={(e) => setField('vagas', e.target.value)} type="number" min="0" step="1" className="input" /></Field>
           <Field label="Data"><input required value={form.data_evento} onChange={(e) => setField('data_evento', e.target.value)} type="date" className="input" /></Field>
-          <Field label="Horário de início"><input required value={form.horario_inicio} onChange={(e) => setField('horario_inicio', e.target.value)} type="time" className="input" /></Field>
+          <Field label="Horário de início (opcional)"><input value={form.horario_inicio} onChange={(e) => setField('horario_inicio', e.target.value)} type="time" className="input" /></Field>
           <Field label="Horário de término"><input value={form.horario_termino} onChange={(e) => setField('horario_termino', e.target.value)} type="time" className="input" /></Field>
-          <Field label="Local" wide><input required value={form.local} onChange={(e) => setField('local', e.target.value)} type="text" maxLength={200} className="input" /></Field>
+          <Field label="Local (opcional)" wide><input value={form.local} onChange={(e) => setField('local', e.target.value)} type="text" maxLength={200} className="input" /></Field>
           <Field label="Imagem de Capa (opcional)" wide>
-            <input onChange={(e) => handleFile(e.target.files?.[0] ?? null)} type="file" accept="image/*" className="input file:mr-4 file:border-0 file:bg-fuchsia-50 file:text-fuchsia-700" />
-            <span className="text-xs text-gray-500">PNG, JPG ou WebP, até 5 MB. Sem arquivo, usa logo oficial.</span>
+            {event?.imagem_capa_url && !removeCurrentImage && !file && (
+              <div className="flex flex-col sm:flex-row sm:items-center gap-4 p-3 border border-gray-200 bg-gray-50">
+                <img src={event.imagem_capa_url} alt="Capa atual" className="w-full sm:w-28 h-20 object-cover border border-gray-200" />
+                <div className="flex-1">
+                  <p className="text-sm font-semibold text-gray-700">Imagem atual</p>
+                  <p className="text-xs text-gray-500 mt-1">Escolha outro arquivo para substituir.</p>
+                </div>
+                <button type="button" onClick={handleRemoveImage} className="flex items-center justify-center gap-2 px-3 py-2 text-sm text-red-600 hover:bg-red-50">
+                  <ImageOff size={17} /> Remover capa
+                </button>
+              </div>
+            )}
+            {removeCurrentImage && (
+              <div className="flex items-center justify-between gap-4 p-3 bg-amber-50 border border-amber-200 text-amber-800 text-sm">
+                <span>Capa atual será removida ao salvar.</span>
+                <button type="button" onClick={() => setRemoveCurrentImage(false)} className="flex items-center gap-1 font-semibold"><RotateCcw size={16} /> Desfazer</button>
+              </div>
+            )}
+            <input ref={fileInputRef} onChange={(e) => handleFile(e.target.files?.[0] ?? null)} type="file" accept="image/*" className="input file:mr-4 file:border-0 file:bg-fuchsia-50 file:text-fuchsia-700" />
+            <span className="text-xs text-gray-500">O seletor mostra apenas arquivos locais novos. PNG, JPG ou WebP, até 5 MB.</span>
           </Field>
           <Field label="Link de Inscrição" wide><input value={form.link_inscricao} onChange={(e) => setField('link_inscricao', e.target.value)} type="url" placeholder="https://forms.gle/..." className="input" /></Field>
-          <Field label="Descrição" wide><textarea required value={form.descricao} onChange={(e) => setField('descricao', e.target.value)} rows={4} maxLength={2000} className="input resize-none" /></Field>
+          <Field label="Descrição (opcional)" wide><textarea value={form.descricao} onChange={(e) => setField('descricao', e.target.value)} rows={4} maxLength={2000} className="input resize-none" /></Field>
         </div>
 
+        {error && <div role="alert" className="mx-6 mt-4 bg-red-50 border border-red-200 text-red-700 px-4 py-3 text-sm">{error}</div>}
         <div className="flex items-center justify-end gap-3 p-6 bg-gray-50 border-t border-gray-100">
           <button type="button" onClick={onClose} disabled={saving} className="px-6 py-2.5 text-gray-600 font-semibold">Cancelar</button>
           <button disabled={saving} className="px-6 py-2.5 bg-md-roxo disabled:opacity-60 text-white font-semibold flex items-center gap-2">
