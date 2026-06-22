@@ -11,7 +11,8 @@ export function formatTime(time: string | null) {
   return time ? time.slice(0, 5) : ''
 }
 
-export function eventDuration(start: string, end: string | null) {
+export function eventDuration(start: string | null, end: string | null) {
+  if (!start) return 'Horário a definir'
   if (!end) return 'horário de término não informado'
   const [startHour, startMinute] = start.split(':').map(Number)
   const [endHour, endMinute] = end.split(':').map(Number)
@@ -23,6 +24,6 @@ export function eventDuration(start: string, end: string | null) {
 }
 
 export function isPastEvent(event: Evento) {
-  const end = event.horario_termino ?? event.horario_inicio
+  const end = event.horario_termino ?? event.horario_inicio ?? '23:59:59'
   return new Date(`${event.data_evento}T${end}`) < new Date()
 }

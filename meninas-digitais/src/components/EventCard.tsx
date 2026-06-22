@@ -25,11 +25,11 @@ export function EventCard({ event }: { event: Evento }) {
       </div>
       <div className="p-5 flex flex-col flex-grow">
         <h2 className="font-bold text-lg text-gray-900 leading-tight mb-2">{event.titulo}</h2>
-        <p className="text-sm text-gray-600 line-clamp-2 mb-4">{event.descricao}</p>
+        {event.descricao && <p className="text-sm text-gray-600 line-clamp-2 mb-4">{event.descricao}</p>}
         <div className="mt-auto space-y-2 text-sm text-gray-600 mb-6 font-medium">
           <div className="flex items-center gap-2"><Calendar size={16} className="text-md-roxo" /> {formatDate(event.data_evento)}</div>
-          <div className="flex items-center gap-2"><Clock size={16} className="text-md-roxo" /> {formatTime(event.horario_inicio)} · {eventDuration(event.horario_inicio, event.horario_termino)}</div>
-          <div className="flex items-center gap-2"><MapPin size={16} className="text-md-roxo" /><span className="truncate">{event.local}</span></div>
+          <div className="flex items-center gap-2"><Clock size={16} className="text-md-roxo" /> {event.horario_inicio ? `${formatTime(event.horario_inicio)} · ${eventDuration(event.horario_inicio, event.horario_termino)}` : 'Horário a definir'}</div>
+          <div className="flex items-center gap-2"><MapPin size={16} className="text-md-roxo" /><span className="truncate">{event.local || 'Local a definir'}</span></div>
           <div className="flex items-center gap-2"><Users size={16} className="text-md-roxo" /> {event.vagas === null ? 'Sem limite de vagas' : `${event.vagas} vagas`}</div>
         </div>
         {event.link_inscricao && event.status !== 'Cancelado' && event.status !== 'Encerrado' && (
