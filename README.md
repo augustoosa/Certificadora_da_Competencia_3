@@ -13,11 +13,11 @@ A plataforma web será um **Sistema de Controle e Gestao de Eventos**, desenvolv
 
 ## 3. Breve Apresentação das Funcionalidades Desenvolvidas
 * **Vitrine Pública:** Visualização de todos os eventos disponíveis em formato de cards interativos.
-* **Autenticação:** Acesso à área administrativa por meio de uma página de login (a autenticacao sera desenvolvida nas proximas semanas).
+* **Autenticação:** Acesso à área administrativa por meio de uma página de login com senha (só é possivel acessar com conta criada no Supabase).
 * **Dashboard Administrativo:** Painel de controle (total de eventos, próximos eventos, total de vagas).
 
 ## 🎥 4. Vídeo de Demonstração de instalação e execução
-> [Link para o vídeo no youtube](https://youtu.be/Bc7tqgLEwhc)
+> [Link para o vídeo no youtube](https://www.youtube.com/watch?v=ABo3lK-cH7Q)
 *(Vídeo demonstrando a instalação das ferramentas e a execução do sistema em ambiente local).*
 
 ---
@@ -81,7 +81,10 @@ Com as ferramentas pré-requisitos (Node.js e Git) instaladas na máquina, siga 
    `npm install`
    - obs: Caso mostre algum erro de vulnerabilidade, rode o comando `npm audit fix` para corrigir automaticamente.
 
-3. **Acessar o arquivo .env.example, trocar o nome dele para .env e preencher as variáveis de ambiente com os dados do seu projeto no    Supabase.**
+3. **Acessar o arquivo .env.example, trocar o nome dele para .env e preencher as variáveis de ambiente com os dados do seu projeto no    Supabase:**
+   VITE_SUPABASE_URL=sua_url_aqui
+   VITE_SUPABASE_ANON_KEY=sua_chave_aqui
+(ou também pode solicitar as variáveis de ambiente pelos criadores do projeto, caso queira usar a base de dados já criada, para isso entre em contato com o grupo de desenvolvimento pelo email: augustoosilvaasaa@gmail.com)
 
 4. **Executar a aplicação:**
    No mesmo terminal, rode o comando:
@@ -106,8 +109,8 @@ OBS: O projeto ja esta finalizado e os botoes ja apresentam funcionalidades, vis
    * Você deve ser redirecionado para a página de Login (`/login`).
 
 3. **Teste de Login:**
-   * O sistema ja possui método de autenticação, entao é necessário escrever email e senha para poder vizualizar a próxima página.
-   * Portano, é necessario criar um usuário de admin no projeto do Supabase para poder logar no sistema. Para isso, siga os passos:
+   * O sistema ja possui método de autenticação, entao é necessário escrever email e senha para poder visualizar a próxima página.
+   * Portanto, é necessario criar um usuário de admin no projeto do Supabase para poder logar no sistema. Para isso, siga os passos:
      1. Acesse o painel do Supabase.
      2. Vá em **Authentication** > **Users**.
      3. Clique em **"New User"** e preencha os campos de email e senha.
@@ -119,7 +122,7 @@ OBS: O projeto ja esta finalizado e os botoes ja apresentam funcionalidades, vis
    * No Dashboard, observe as métricas e a listagem de eventos.
    * Clique no botão **"Novo Evento"**.
    * O modal de cadastro deve abrir na tela, preencha os campos obrigatórios e clique em **"Salvar"**.
-   * Verifique que o novo evento aparece na listagem da páginda administrativa e também na vitrine pública.
+   * Verifique que o novo evento aparece na listagem da página administrativa e também na vitrine pública.
 
 ## Estrutura de Pastas Padrão
 
