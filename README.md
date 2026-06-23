@@ -15,7 +15,6 @@ A plataforma web será um **Sistema de Controle e Gestao de Eventos**, desenvolv
 * **Vitrine Pública:** Visualização de todos os eventos disponíveis em formato de cards interativos.
 * **Autenticação:** Acesso à área administrativa por meio de uma página de login (a autenticacao sera desenvolvida nas proximas semanas).
 * **Dashboard Administrativo:** Painel de controle (total de eventos, próximos eventos, total de vagas).
-* **IMPORTANTE: TODOS os dados atuais (informacoes dos cards e do dashboard) vistos nas páginas foram inventados e só existem dentro do código do front-end, visto que ainda nao foi feita a conexao com o back-end. Os cards da página pública e os números do dashboard foram criados apenas para testar a estética das páginas. [08/05/2026]**
 
 ## 🎥 4. Vídeo de Demonstração de instalação e execução
 > [Link para o vídeo no youtube](https://youtu.be/Bc7tqgLEwhc)
@@ -64,7 +63,7 @@ Como o projeto utiliza o Supabase como serviço gerenciado, a base de dados fica
 4. No menu lateral esquerdo, vá em **"SQL Editor"** e clique em **"New Query"**.
 5. Inserir o script SQL de criação das tabelas (acesse o script no repositório).
 6. Clique em **"Run"** para criar a estrutura do banco de dados.
-7. Criado o schema base do SQL partiremos para a conexão da API nas próximas etapas. Para isso utilizaremos o menu **Integrations** e a **Data API** gerada com base no schema.
+7. Criado o schema base do SQL partiremos para a conexão da API. Para isso utilizaremos o menu **Integrations** e a **Data API** gerada com base no schema.
 
 ---
 
@@ -94,7 +93,7 @@ Com as ferramentas pré-requisitos (Node.js e Git) instaladas na máquina, siga 
 
 ## 8. Roteiro a ser seguido para Testar o Sistema
 
-OBS: O projeto ainda está em desenvolvimento, a grande maioria dos botoes ainda nao apresentam funcionalidade, visto que elas serao implementadas futuramente até a Entrega final.
+OBS: O projeto ja esta finalizado e os botoes ja apresentam funcionalidades, visto que elas foram implementadas na etapada da Entrega final.
 
 * Siga esta sequência lógica para validar todas as páginas do projeto:
 
@@ -107,13 +106,20 @@ OBS: O projeto ainda está em desenvolvimento, a grande maioria dos botoes ainda
    * Você deve ser redirecionado para a página de Login (`/login`).
 
 3. **Teste de Login:**
-   * O sistema ainda nao possui nenhum método de autenticacao, entao nao é necessário escrever email nem senha para poder vizualizar a próxima página
-   * Clique em "Entrar". Você deve ser redirecionado para o Painel Administrativo (`/admin`).
+   * O sistema ja possui método de autenticação, entao é necessário escrever email e senha para poder vizualizar a próxima página.
+   * Portano, é necessario criar um usuário de admin no projeto do Supabase para poder logar no sistema. Para isso, siga os passos:
+     1. Acesse o painel do Supabase.
+     2. Vá em **Authentication** > **Users**.
+     3. Clique em **"New User"** e preencha os campos de email e senha.
+   * Ou tambem pode solicitar uma conta de admin ja criada pelo grupo de desenvolvimento (augustoosilvaasaa@gmail.com).
+   * Após criar o usuário, volte para a página de login do sistema e insira as credenciais.
+   * Clique em "Entrar" no sistema. Você deve ser redirecionado para o Painel Administrativo (`/admin`).
 
 4. **Teste de Gestão de Eventos:**
    * No Dashboard, observe as métricas e a listagem de eventos.
    * Clique no botão **"Novo Evento"**.
-   * O modal de cadastro deve abrir na tela, com os campos obrigatórios (Título, Tipo, Data, Local).
+   * O modal de cadastro deve abrir na tela, preencha os campos obrigatórios e clique em **"Salvar"**.
+   * Verifique que o novo evento aparece na listagem da páginda administrativa e também na vitrine pública.
 
 ## Estrutura de Pastas Padrão
 
