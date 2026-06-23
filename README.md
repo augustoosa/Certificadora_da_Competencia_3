@@ -62,10 +62,9 @@ Como o projeto utiliza o Supabase como serviço gerenciado, a base de dados fica
 2. Clique em **"New Project"**, defina um nome, uma senha segura para o banco e selecione a região mais próxima (ex: São Paulo).
 3. Aguarde o projeto ser provisionado (pode levar alguns minutos).
 4. No menu lateral esquerdo, vá em **"SQL Editor"** e clique em **"New Query"**.
-5. Inserir o script SQL de criação das tabela.
+5. Inserir o script SQL de criação das tabelas (acesse o script no repositório).
 6. Clique em **"Run"** para criar a estrutura do banco de dados.
 7. Criado o schema base do SQL partiremos para a conexão da API nas próximas etapas. Para isso utilizaremos o menu **Integrations** e a **Data API** gerada com base no schema.
-8. EM BREVE...
 
 ---
 
@@ -81,12 +80,15 @@ Com as ferramentas pré-requisitos (Node.js e Git) instaladas na máquina, siga 
 2. **Compilar/Instalar as dependências do projeto:**
    No seu terminal, confirá se está dentro da pasta "meninas-digitais", e rode o comando:
    `npm install`
+   - obs: Caso mostre algum erro de vulnerabilidade, rode o comando `npm audit fix` para corrigir automaticamente.
 
-3. **Executar a aplicação:**
+3. **Acessar o arquivo .env.example, trocar o nome dele para .env e preencher as variáveis de ambiente com os dados do seu projeto no    Supabase.**
+
+4. **Executar a aplicação:**
    No mesmo terminal, rode o comando:
    `npm run dev`
 
-4. O terminal exibirá um endereço local (geralmente `http://localhost:5173`). Segure a tecla `Ctrl` e clique no link para abrir o sistema no navegador.
+5. O terminal exibirá um endereço local (geralmente `http://localhost:5173`). Segure a tecla `Ctrl` e clique no link para abrir o sistema no navegador.
 
 ---
 
