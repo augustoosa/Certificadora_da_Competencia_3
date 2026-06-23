@@ -62,7 +62,7 @@ Como o projeto utiliza o Supabase como serviço gerenciado, a base de dados fica
 2. Clique em **"New Project"**, defina um nome, uma senha segura para o banco e selecione a região mais próxima (ex: São Paulo).
 3. Aguarde o projeto ser provisionado (pode levar alguns minutos).
 4. No menu lateral esquerdo, vá em **"SQL Editor"** e clique em **"New Query"**.
-5. Inserir o script SQL de criação das tabelas (acesse o script no repositório).
+5. Inserir o [schema.sql](https://github.com/augustoosa/Certificadora_da_Competencia_3/blob/main/schema.sql) de criação das tabelas (acesse o script no repositório).
 6. Clique em **"Run"** para criar a estrutura do banco de dados.
 7. Criado o schema base do SQL partiremos para a conexão da API nas próximas etapas. Para isso utilizaremos o menu **Integrations** e a **Data API** gerada com base no schema.
 
